@@ -1,2 +1,15 @@
 title: Resources
 body: "We’ve assembled some resources for building you own archive:"
+links:
+  -
+    title: Lorem ipsum
+    body: Pellentesque sit amet leo semper, hendrerit justo nec, luctus nunc.
+    url: https://www.cnn.com/
+  -
+    title: Donec ut nibh
+    body: Donec vel feugiat nibh, ut ullamcorper neque.
+    url: https://www.cnn.com/
+  -
+    title: Pellentesque tempor
+    body: Fusce ultrices, ligula eget sollicitudin volutpat, ligula velit fermentum lectus, id viverra tortor nunc ut elit.
+    url: https://www.cnn.com/
