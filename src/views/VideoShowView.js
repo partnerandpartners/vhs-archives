@@ -7,13 +7,24 @@ import VideoPlayerControls from 'components/VideoPlayerControls'
 import VideoCaptions from 'components/VideoCaptions'
 import PageTitle from 'components/PageTitle'
 import v from 'vudu'
-import { styles as s } from 'stylesheet'
+import { styles as s, colors } from 'stylesheet'
 
 const localClasses = v({
+  playerContainer: {
+    '@composes': [s.relative],
+    minHeight: '80vh',
+    maxHeight: '80vh',
+  },
   player: {
+    '@composes': [s.absolute, s.t0, s.b0, s.r0, s.l0],
     video: {
-      '@composes': [s.bgBlack],
-      objectFit: 'cover',
+      '@composes': [s.block, s.bgBlack],
+      width: '100%',
+      maxHeight: '100%',
+      objectFit: 'contain',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: '50% 50%',
     }
   },
   section: {
@@ -44,26 +55,38 @@ class VideoShowView extends Component {
 
   render = () => {
     const { match: { params: { videoId } }, videos } = this.props
+    const { playing, paused } = this.state
     const video = videos[videoId]
 
     if (video) {
+      const renderClasses = v({
+        player: {
+          video: {
+            backgroundImage: !playing && !paused ? `url(${video.poster})` : 'none',
+          },
+        },
+      })
+
       return (
         <Fragment>
-          <ReactPlayer
-            className={localClasses.player}
-            ref={elem => this.player = elem}
-            onDuration={this.handleDuration}
-            onEnded={this.handleEnded}
-            onProgress={this.handleProgess}
-            onStart={this.handlePlaying}
-            onPlay={this.handlePlaying}
-            onPause={this.handlePause}
-            url={video.source}
-            playing={this.state.userPlaying}
-            width="100%"
-            height="auto"
-            config={{ file: { attributes: { poster: video.poster } } }}
-          />
+          <div className={localClasses.playerContainer}>
+            <ReactPlayer
+              className={[localClasses.player, renderClasses.player].join(' ')}
+              ref={elem => this.player = elem}
+              onDuration={this.handleDuration}
+              onEnded={this.handleEnded}
+              onProgress={this.handleProgess}
+              onStart={this.handlePlaying}
+              onPlay={this.handlePlaying}
+              onPause={this.handlePause}
+              url={video.source}
+              playing={this.state.userPlaying}
+              width="100%"
+              height="100%"
+              maxHeight="100%"
+              config={{ file: { attributes: { poster: '/assets/images/transparent.png' } } }}
+            />
+          </div>
           <VideoPlayerControls {...this.state} onClick={this.togglePlayer} />
           <section className={localClasses.section}>
             <PageTitle>{video.title}</PageTitle>
