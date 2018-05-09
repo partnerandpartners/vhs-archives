@@ -9,6 +9,7 @@ import { styles as s } from 'stylesheet'
 const localClasses = v({
   view: {
     '@composes': [s.flex],
+    minWidth: '100%',
     overflow: 'hidden',
   },
   videos: {
@@ -23,16 +24,30 @@ const localClasses = v({
 const videoIndexRoot = document.getElementById('video-index-root');
 
 class VideoIndexView extends Component {
+  state = {
+    tag: null,
+  }
+
+  handleTagClick = tag => this.setState({ tag })
+
   render = () => {
     const { tags, videos, videosByTag } = this.props
+    const { tag } = this.state
+
+    const indexedVideos = tag ? videosByTag[tag] : Object.keys(videos).map(key => videos[key])
 
     return createPortal(
       <div className={localClasses.view}>
         <div className={[localClasses.videos, 'scrollable'].join(' ')}>
-          <VideoList videos={Object.keys(videos).map(key => videos[key])} />
+          <VideoList videos={indexedVideos} />
         </div>
         <div className={[localClasses.tags, 'scrollable'].join(' ')}>
-          <TagList tags={tags} videosByTag={videosByTag} />
+          <TagList
+            currentTag={tag}
+            tags={tags}
+            videosByTag={videosByTag}
+            onClick={this.handleTagClick}
+          />
         </div>
       </div>,
       videoIndexRoot

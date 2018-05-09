@@ -14,6 +14,7 @@ const localClasses = v({
     padding: '0 15px',
     fontSize: '36px',
     borderTop: `1px solid ${colors.black}`,
+    cursor: 'pointer',
     ...copy.blocus,
     ':first-child': {
       borderTop: '0',
@@ -21,13 +22,28 @@ const localClasses = v({
   },
 })
 
-const LineItem = ({ count, title }) => (
-  <li className={localClasses.lineItem}>{`${title} (${count})`}</li>
+const LineItem = ({ active, count, id, onClick, title }) => (
+  <li
+    className={localClasses.lineItem}
+    onClick={() => onClick(id)}
+    style={{ backgroundColor: active ? colors.yellow : 'transparent' }}
+  >
+    {`${title} (${count})`}
+  </li>
 )
 
-const TagList = ({ tags, videosByTag }) => (
+const TagList = ({ currentTag, onClick, tags, videosByTag }) => (
   <ul className={localClasses.list}>
-    {Object.keys(tags).map(key => <LineItem key={key} {...tags[key]} count={videosByTag[key].length} />)}
+    {Object.keys(tags).map(key => (
+      <LineItem
+        key={key}
+        {...tags[key]}
+        id={key}
+        onClick={onClick}
+        active={currentTag === key}
+        count={videosByTag[key].length}
+      />
+    ))}
   </ul>
 )
 
