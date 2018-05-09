@@ -14,11 +14,11 @@ const localClasses = v({
     '@composes': [s.flex],
   },
   body: {
-    flex: '0.6',
+    flex: '0.58',
     paddingRight: '40px',
   },
   links: {
-    flex: '0.4',
+    flex: '0.42',
   },
 })
 
