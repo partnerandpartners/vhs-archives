@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { createPortal } from 'react-dom'
 import ReactPlayer from 'react-player'
 import v from 'vudu'
 import { styles as s } from 'stylesheet'
+import { site } from 'config'
 
 const localClasses = v({
   background: {
@@ -16,18 +17,31 @@ const localClasses = v({
 
 const homepageBackgroundRoot = document.getElementById('background-root')
 
-const HomepageBackground = () => createPortal(
-  <div className={localClasses.background}>
-    <ReactPlayer
-      width="100%"
-      height="100%"
-      playing
-      loop
-      volume={0}
-      url='https://ia801506.us.archive.org/33/items/loops_201805/safe_sex_slut-loop.mp4'
-    />
-  </div>,
-  homepageBackgroundRoot,
-)
+class HomepageBackground extends Component {
+  state = {
+    index: 0,
+  }
+
+  onEnded = () => {
+    const { index } = this.state
+    const nextIndex = index === site.homepageVideos.length - 1 ? 0 : index + 1
+    this.setState({ index: nextIndex })
+  }
+
+  render = () => createPortal(
+    <div className={localClasses.background}>
+      <ReactPlayer
+        ref={elem => {this.player = elem}}
+        onEnded={this.onEnded}
+        width="100%"
+        height="100%"
+        playing
+        volume={0}
+        url={site.homepageVideos[this.state.index]}
+      />
+    </div>,
+    homepageBackgroundRoot,
+  )
+}
 
 export default HomepageBackground
