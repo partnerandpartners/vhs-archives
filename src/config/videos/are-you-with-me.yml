@@ -1,5 +1,6 @@
 title: Are You With Me
-source: http://www.jpl.nasa.gov/videos/msl/msl20080625/msl20080625-1280-i.m4v
+source: https://archive.org/download/AreYouWithMe_201805/Are_You_With_Me.ogv
+poster: https://archive.org/download/AreYouWithMe_201805/AreYouWithMe_201805.thumbs/Are_You_With_Me_000001.jpg
 homepage: true
 position: 1
 body:
@@ -9,7 +10,7 @@ body:
 captions:
   -
     start: '0:0:30'
-    end: '0:1:30'
+    end: '0:0:50'
     body: Hendrerit urna a habitasse euismod dolor nec sagittis nunc fusce varius urna ullamcorper dui molestie scelerisque.
   -
     start: '0:1:45'
