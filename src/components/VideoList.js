@@ -7,13 +7,16 @@ const localClasses = v({
   lineItem: {
     marginBottom: '50px',
   },
+  image: {
+    minWidth: '100%',
+  },
 })
 
 const LineItem = ({ id, poster, title }) => (
   <li className={localClasses.lineItem}>
     <NavLink to={`/videos/${id}`}>
       {poster ? (
-        <img src={poster} alt={`${title} Poster`} />
+        <img className={localClasses.image} src={poster} alt={`${title} Poster`} />
       ) : title}
     </NavLink>
   </li>
