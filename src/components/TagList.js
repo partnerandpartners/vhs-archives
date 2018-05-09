@@ -4,6 +4,8 @@ import { styles as s, colors, copy } from 'stylesheet'
 
 const localClasses = v({
   list: {
+    '@composes': [s.flex, s.flexColumn],
+    height: '100%',
     borderLeft: `1px solid ${colors.black}`,
   },
   lineItem: {
