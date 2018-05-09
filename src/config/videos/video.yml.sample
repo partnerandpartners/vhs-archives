@@ -1,0 +1,13 @@
+# NOTE: This is just a sample of a video yaml file
+title: Video Title  # Title of the video
+source: http://www.example.com/test.m4v # URL of video file
+homepage: true # (optional) Feature video on homepage
+position: 2 # (optional) Position of video on homepage
+tags: # an array of tags that correspond to the tag files in config/tags/
+  - new # name of tag yaml file
+  - archive # another tag name
+captions: # timecode array of captions
+  -
+    start: '0:0:30' # time caption active
+    end: '0:1:30' # time caption ends
+    body: Lorem ipsum # body of caption
