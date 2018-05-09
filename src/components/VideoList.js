@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import v from 'vudu'
-import { styles as s } from 'stylesheet'
 
 const localClasses = v({
   lineItem: {
@@ -14,7 +13,7 @@ const LineItem = ({ id, poster, title }) => (
   <li className={localClasses.lineItem}>
     <NavLink to={`/videos/${id}`}>
       {poster ? (
-        <img src={poster} />
+        <img src={poster} alt={`${title} Poster`} />
       ) : title}
     </NavLink>
   </li>

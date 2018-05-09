@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Header />
+        <Route path='/' component={Header} />
         <Switch>
           <Route exact path='/' render={() => <HomeView videos={homepageVideos} />} />
           <Route path='/about' render={() => <AboutView {...about} />} />

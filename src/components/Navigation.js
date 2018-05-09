@@ -8,7 +8,7 @@ const localClasses = v({
 
   },
   link: {
-    '@composes': [s.p, s.black],
+    '@composes': [s.p],
     textDecoration: 'none',
     textTransform: 'uppercase',
     marginLeft: '40px',
@@ -18,11 +18,11 @@ const localClasses = v({
   },
 })
 
-const Navigation = () => (
+const Navigation = ({ color }) => (
   <nav className={localClasses.nav}>
-    <NavLink className={localClasses.link} to="/about">About</NavLink>
-    <NavLink className={localClasses.link} to="/resources">Resources</NavLink>
-    <NavLink className={localClasses.link} to="/videos">Index</NavLink>
+    <NavLink className={localClasses.link} style={{ color }} to="/about">About</NavLink>
+    <NavLink className={localClasses.link} style={{ color }} to="/resources">Resources</NavLink>
+    <NavLink className={localClasses.link} style={{ color }} to="/videos">Index</NavLink>
   </nav>
 )
 

@@ -11,6 +11,7 @@ const localClasses = v({
   lineItem: {
     '@composes': [s.flex, s.alignCenter],
     height: '80px',
+    minHeight: '80px',
     padding: '0 15px',
     fontSize: '36px',
     borderTop: `1px solid ${colors.black}`,

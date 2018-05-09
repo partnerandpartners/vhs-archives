@@ -21,12 +21,15 @@ const localClasses = v({
   },
 })
 
-const videoIndexRoot = document.getElementById('video-index-root');
+const videoIndexRoot = document.getElementById('video-index-root')
 
 class VideoIndexView extends Component {
   state = {
     tag: null,
   }
+
+  componentWillMount = () => videoIndexRoot.classList.add('active-portal')
+  componentWillUnmount = () => videoIndexRoot.classList.remove('active-portal')
 
   handleTagClick = tag => this.setState({ tag })
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import VideoCaption from 'components/VideoCaption'
 import v from 'vudu'
-import { styles as s, colors } from 'stylesheet'
+import { colors } from 'stylesheet'
 
 const localClasses = v({
   list: {

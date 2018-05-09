@@ -85,6 +85,8 @@ class VideoShowView extends Component {
 }
 
 VideoShowView.propTypes = {
+  match: PropTypes.object.isRequired,
+  videos: PropTypes.object.isRequired,
 }
 
 export default VideoShowView

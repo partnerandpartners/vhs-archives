@@ -43,19 +43,17 @@ body {
   flex-direction: column;
 }
 
-#content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-#root {
-  flex-grow: 1;
-}
-
-#video-index-root {
+#video-index-root, #home-root {
   display: flex;
   overflow: hidden;
+}
+
+#content, #header-root, #video-index-root, #home-root {
+  z-index: 99;
+}
+
+.active-portal {
+  flex-grow: 1;
 }
 
 button, input {

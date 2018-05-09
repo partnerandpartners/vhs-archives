@@ -21,7 +21,7 @@ const copy = {
     ...fonts.karla,
   },
   h3: {
-    fontSize: '17px',
+    fontSize: '36px',
     ...fonts.karla,
   },
   h4: {

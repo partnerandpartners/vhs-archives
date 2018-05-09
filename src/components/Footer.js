@@ -6,7 +6,7 @@ import { styles as s } from 'stylesheet'
 
 const localClasses = v({
   footer: {
-    padding: '50px 40px',
+    '@composes': [s.pagePadding],
     backgroundImage: 'linear-gradient(-180deg, rgba(248,231,28,0.00) 44%, rgba(248,231,28,0.54) 96%)',
   },
 })

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Markdown from 'components/Markdown'
 import PageTitle from 'components/PageTitle'
