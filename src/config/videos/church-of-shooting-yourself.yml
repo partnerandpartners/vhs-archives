@@ -3,8 +3,10 @@ source: https://archive.org/download/ChurchofShootingYourself/ChurchofShootingYo
 poster: https://archive.org/download/ChurchofShootingYourself/ChurchofShootingYourself.thumbs/ChurchofShootingYourself_000001.jpg
 homepage: true
 tags:
-  - activism
-  - AIDS
+  - squatting
+  - gentrification
+  - media critique
+  - Public Access Television
 position: 4
 body:
   |
@@ -23,4 +25,12 @@ captions:
   -
     start: '0:1:10'
     end: '0:1:40'
-    body: Step Four
+    body: Step Four  
+  -
+    start: '0:15:10'
+    end: '0:16:40'
+    body: Overlaid audio on newscaster
+  -
+    start: '0:20:10'
+    end: '0:20:40'
+    body: Donut line
