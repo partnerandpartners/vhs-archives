@@ -7,7 +7,7 @@ import VideoPlayerControls from 'components/VideoPlayerControls'
 import VideoCaptions from 'components/VideoCaptions'
 import PageTitle from 'components/PageTitle'
 import v from 'vudu'
-import { styles as s, colors } from 'stylesheet'
+import { styles as s } from 'stylesheet'
 
 const localClasses = v({
   playerContainer: {
@@ -83,7 +83,6 @@ class VideoShowView extends Component {
               playing={this.state.userPlaying}
               width="100%"
               height="100%"
-              maxHeight="100%"
               config={{ file: { attributes: { poster: '/assets/images/transparent.png' } } }}
             />
           </div>
