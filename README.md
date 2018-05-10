@@ -11,9 +11,7 @@ Open-source video archive website
 ## Configuration
 
 ### Setup
-1. Clone this repository:
-
-  `git clone git@github.com:partnerandpartners/vhs-archives.git`
+1. Clone this repository: `git clone git@github.com:partnerandpartners/vhs-archives.git`
 2. Run `yarn install`
 3. Rename `.env.sample` to `.env`
 
