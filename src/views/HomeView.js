@@ -7,7 +7,8 @@ import { styles as s } from 'stylesheet'
 
 const localClasses = v({
   view: {
-    '@composes': [s.pagePadding, s.flex, s.flexColumn, s.justifyCenter]
+    '@composes': [s.pagePadding, s.flex, s.flexColumn, s.justifyCenter, s.grow1],
+    width: '100%',
   },
 })
 
@@ -18,7 +19,7 @@ class HomeView extends Component {
   componentWillUnmount = () => homeRoot.classList.remove('active-portal')
 
   render = () => createPortal(
-    <div className={localClasses.view}>
+    <div className={[localClasses.view, 'scrollable'].join(' ')}>
       <HomepageBackground />
       <FeaturedVideoList {...this.props} />
     </div>,

@@ -6,11 +6,11 @@ import { styles as s, colors, copy } from 'stylesheet'
 import { site } from 'config'
 
 const localClasses = v({
+  list: {
+    '@composes': [s.flex, s.flexColumn, s.grow1, s.spaceBetween],
+  },
   lineItem: {
     marginBottom: '40px',
-    ':last-child': {
-      marginBottom: '0',
-    },
   },
   link: {
     textDecoration: 'none',
@@ -41,7 +41,7 @@ const LineItem = ({ id, index, title }) => (
 )
 
 const FeaturedVideoList = ({ videos }) => (
-  <ul>
+  <ul className={localClasses.list}>
     {videos.map((video, index) => <LineItem key={video.id} index={index+1} {...video} />)}
   </ul>
 )
